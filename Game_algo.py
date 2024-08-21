@@ -2,11 +2,12 @@ with open("story.txt", "r") as f:
     story = f.read()
 
 multiple_resp = {
-    "(adjective)":story.count("(adjective)"),
-    "(noun)":story.count("(noun)"),
-    "(plural nouns)":story.count("(plural nouns)"),
-    "(verb)": story.count("(verb)")
+    "(adjective)":6,
+    "(noun)":8,
+    "(plural nouns)":2,
+    "(colors)": 2
     }
+    
 starting_point = -1
 last_index = 0
 words = {}
