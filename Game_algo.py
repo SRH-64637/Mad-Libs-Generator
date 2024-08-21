@@ -2,12 +2,11 @@ with open("story.txt", "r") as f:
     story = f.read()
 
 multiple_resp = {
-    "(adjective)":6,
-    "(noun)":8,
-    "(plural nouns)":2,
-    "(colors)": 2
+    "(adjective)":4,
+    "(noun)":5,
+    "(plural nouns)":3
     }
-    
+
 starting_point = -1
 last_index = 0
 words = {}
@@ -17,10 +16,10 @@ new_story = ""
 # multiple_resp stores the placeholders that occurs more than once and needs multiple distinct response
 
 for i, char in enumerate(story):
-    if char == "(":
+    if char == "[":
         starting_point = i 
 
-    elif char == ")" and starting_point != -1:
+    elif char == "]" and starting_point != -1:
         placeholder = story[starting_point: i+1].lower() # "(noun)"
 
         if placeholder in multiple_resp.keys():
